@@ -5,7 +5,6 @@ import { useEffect, useState } from "react"
 const CountdownTimer = () => {
     const t = useTranslations("banner")
   
-  const [partyTime, setPartyTime] = useState(false)
   const [days, setDays] = useState(0)
   const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
@@ -32,9 +31,7 @@ const CountdownTimer = () => {
       const s = Math.floor((difference % (1000 * 60)) / 1000)
       setSeconds(s)
 
-      if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-        setPartyTime(true)
-      }
+
     }, 1000)
 
     return () => clearInterval(interval)
